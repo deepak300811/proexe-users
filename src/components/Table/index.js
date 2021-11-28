@@ -27,7 +27,7 @@ const Table = ({ setShowForm, users, setSelectedUser, selectedUser }) => {
               <th className="py-8 pl-4 px-2">Id</th>
               <th className="py-8 px-2">Name</th>
               <th className="py-8 px-2">
-                <button className="mr-1" onClick={handleSort}>
+                <button className="mr-2" onClick={handleSort}>
                   <i className="fa fa-sort"></i>
                 </button>
                 Username

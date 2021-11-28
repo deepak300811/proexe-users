@@ -36,7 +36,7 @@ export const editData = (selectedUser) => {
   return (dispatch) => {
     const hitApi = async () => {
       try {
-        const res = await axios.put(`api_constant/${selectedUser.id}`, {
+        const res = await axios.put(`${api_constant}/${selectedUser.id}`, {
           email: selectedUser.email,
           name: selectedUser.name,
         });
@@ -58,7 +58,7 @@ export const addData = (newUser) => {
   return (dispatch) => {
     const hitApi = async () => {
       try {
-        const res = await axios.post(`api_constant/`, {
+        const res = await axios.post(`${api_constant}/`, {
           email: newUser.email,
           name: newUser.name,
         });
@@ -79,7 +79,7 @@ export const removeUser = (user) => {
   return (dispatch) => {
     const hitApi = async () => {
       try {
-        const res = await axios.delete(`api_constant/${user.id}`);
+        const res = await axios.delete(`${api_constant}/${user.id}`);
         if (res.status === 200) {
           dispatch(deleteData(user));
         }
