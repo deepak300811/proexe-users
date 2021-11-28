@@ -7,6 +7,9 @@ import {
   SORT_USERS,
 } from "./actions";
 
+const api_constant =
+  "https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data";
+
 const setData = (users) => {
   return { type: SET_DATA, payload: users };
 };
@@ -15,9 +18,7 @@ export const getData = () => {
   return (dispatch) => {
     const hitApi = async () => {
       try {
-        const res = await axios.get(
-          "http://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data"
-        );
+        const res = await axios.get(api_constant);
         dispatch(setData(res.data));
       } catch (error) {
         console.error("Error While getting Users=", error.message);
@@ -35,10 +36,10 @@ export const editData = (selectedUser) => {
   return (dispatch) => {
     const hitApi = async () => {
       try {
-        const res = await axios.put(
-          `http://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data/${selectedUser.id}`,
-          { email: selectedUser.email, name: selectedUser.name }
-        );
+        const res = await axios.put(`api_constant/${selectedUser.id}`, {
+          email: selectedUser.email,
+          name: selectedUser.name,
+        });
         dispatch(setUpdateData(res.data));
       } catch (error) {
         console.error("Error While Editting User=", error.message);
@@ -57,10 +58,10 @@ export const addData = (newUser) => {
   return (dispatch) => {
     const hitApi = async () => {
       try {
-        const res = await axios.post(
-          `https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data/`,
-          { email: newUser.email, name: newUser.name }
-        );
+        const res = await axios.post(`api_constant/`, {
+          email: newUser.email,
+          name: newUser.name,
+        });
         dispatch(setNewData(res.data));
       } catch (error) {
         console.error("Error While Adding User=", error.message);
@@ -78,9 +79,7 @@ export const removeUser = (user) => {
   return (dispatch) => {
     const hitApi = async () => {
       try {
-        const res = await axios.delete(
-          `https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data/${user.id}`
-        );
+        const res = await axios.delete(`api_constant/${user.id}`);
         if (res.status === 200) {
           dispatch(deleteData(user));
         }
