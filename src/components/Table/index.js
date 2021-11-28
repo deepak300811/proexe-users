@@ -20,7 +20,7 @@ const Table = ({ setShowForm, users, setSelectedUser, selectedUser }) => {
   };
   return (
     <>
-      <div className="p-4">
+      <div className="p-4 overflow-x-auto">
         <table className="w-full text-center ">
           <thead className="bg-gray-100 border-2 px-8 shadow-sm text-gray-900">
             <tr>

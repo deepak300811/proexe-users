@@ -12,7 +12,7 @@ const Container = () => {
   return (
     <div>
       <Header />
-      <div className="border-2 border-gray-200 rounded-md shadow overflow-x-auto">
+      <div className="border-2 border-gray-200 rounded-md shadow ">
         <ContainerHeader showForm={showForm} setShowForm={setShowForm} />
         {showForm ? (
           <Form
