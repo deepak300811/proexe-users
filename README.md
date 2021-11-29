@@ -13,14 +13,14 @@
 
 # Architecture of the project 🎁
 
-1. App is the parent of the view our application, it is providing a div which directes the width of the whole application.
-2. Container contains all the working things in our project, the view which gets changed, all happens in container, A container can contain many other Components. In our example the container contains Header, Form, Table.
+1. App is the parent of the view of our application, (it is providing a div which directes the width of the whole application).
+2. App > Container contains all the working things in our project, the view which gets changed, all happens in container, A container can contain many other   Components. In our example the container contains Header, Form, Table.
 3. Based on the conditions either a Form will be rendered or a Table.
-4. Have otilized the concept of Portals to show the confirmation modal-up when Administrator tries to delete something.
+4. Have utilized the concept of Portals to show the confirmation modal-up when Administrator tries to delete something.
 
-# About the Redux store 🎁
+# About the Redux store 🙋🏻‍♂️
 
-1. The project heavly use the powers of Redux, and it's middleware such as thunk (thunk help us to do asynk tasks before dispatching the action on the reducer).
+1. The project heavenly use the powers of Redux, and it's middleware such as thunk (thunk help us to do asynk tasks before dispatching the action on the reducer).
 2. For simplicity I have only put two objects in state such as users, and sort. But ofcourse we can add other pieces such as isLoading, errorState, etc, but that will go outside the scope of this web app. (For now I have handeled all the errorState and loading in components)
 3. for accessing state and dispatching actions I have used powers of useSelector, and useDispatch hook provided by 'react-redux' (I think it makes the app really simple rather than using a Higher Order Component named Connect for every state piece and dispatch)
 4. Concepts of actions creators have been exploited well and all the action definations can be seen in 'src/Store/actionCreators.js'
@@ -29,15 +29,15 @@
 
 1. Table, ConfirmationModal, Form, Header
 
-# Ascending / Descending sort based on username
+# Ascending / Descending sort based on username ⧡
 
 A button is introduced near username heading in table, clicking on that the users' list will be sorted, originally it will be sorted in ascending order. If that button is clicked again, the list will be sorted in descending order.
 
-# Limitations with JSON Server and Asumptions
+# Limitations with JSON Server and Asumptions 😢
 
-## Problem: As we know we can't get an OK status for fake jsonserverapi when admin edits or delete a user created by admin himself, because we know that created user won't be existing on the fake json server.
+## Problem: As we know we can't get an OK status for fake jsonserverapi when admin edits or delete a user created by admin himself, because we know that created user won't be existing on the fake json server. 💭
 
-### Solution: I have introduced a userAdded flag for each of the users we have in our store.
+### Solution: I have introduced a userAdded flag for each of the users we have in our store. 💡
 
 1. for all the users who come from server i sat their userAdded flag to false. And for all the users added by admin himself, I set userAdded flag for them as true.
 2. When for a particular user userAdded =false, then I dispatch an action which will first make an api call to fake json server and get the status code for that edit / deletion operation.
