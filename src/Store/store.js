@@ -40,6 +40,10 @@ const descendingFunction = (user1, user2) => {
 const reducer = (state = initialState, action) => {
   if (action.type === SET_DATA) {
     const newArr = action.payload.map((user) => {
+      // so that system can identify which users are added by user and which user came from fake server
+      // based on the userAdded flag we decide if we wanna make a network call for addition or deletion of a user
+      // if userAdded = false for a particular user a network call will be made.
+      // if userAdded = true for a particular user no network call will be there, direct actions will happen on store.
       user.userAdded = false;
       return user;
     });
