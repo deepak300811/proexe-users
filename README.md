@@ -2,6 +2,8 @@
 
 ### Developed by Deepak Kumar (deepak300811@gmail.com)
 
+### Available at https://proexechallengebydeepak.netlify.app/ 🚀
+
 # Third party / Helper libraries used in this project ❤️
 
 1. For styling: TailwindCSS, along with some minute manual overrides in App.css
@@ -22,6 +24,10 @@
 2. For simplicity I have only put two objects in state such as users, and sort. But ofcourse we can add other pieces such as isLoading, errorState, etc, but that will go outside the scope of this web app. (For now I have handeled all the errorState and loading in components)
 3. for accessing state and dispatching actions I have used powers of useSelector, and useDispatch hook provided by 'react-redux' (I think it makes the app really simple rather than using a Higher Order Component named Connect for every state piece and dispatch)
 4. Concepts of actions creators have been exploited well and all the action definations can be seen in 'src/Store/actionCreators.js'
+
+# Dumb components 😐
+
+1. Table, ConfirmationModal, Form, Header
 
 # Ascending / Descending sort based on username
 
